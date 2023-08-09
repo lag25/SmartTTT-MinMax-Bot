@@ -1,0 +1,76 @@
+using UnityEngine;
+using System.IO.Ports;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+    SerialPort serialPort;
+
+    void Start()
+    {
+        // Replace these values with your actual serial port settings
+        
+        string portName = "COM7";
+        int baudRate = 115200;
+        
+        serialPort = new SerialPort(portName, baudRate);
+        serialPort.Open();
+        if (serialPort != null)
+        {
+            Debug.Log("Serial port initialized successfully.");
+           
+        }
+        else
+        {
+            Debug.LogError("Failed to initialize serial port.");
+        }
+    }
+
+
+    void Update()
+    {
+        
+
+        
+
+        
+        
+        
+        if (serialPort != null && serialPort.IsOpen && serialPort.BytesToRead > 0)
+        {
+
+            Debug.Log("ARK OF COVENANT");
+            string data = serialPort.ReadLine();
+            string[] values = data.Split('\t');
+            Debug.Log(data);
+            Debug.Log(values);
+            Debug.Log("First Element " + values[0]);
+            Debug.Log("Second Element " + values[1]);
+            Debug.Log("Third Element " + values[2]);
+            Debug.Log("IMPOSTER Element " + values[3]);
+            Debug.Log("Length of Length" + values.Length);
+            if (values.Length == 4)
+            {
+                float yaw = float.Parse(values[0]);
+                float pitch = float.Parse(values[1]);
+                float roll = float.Parse(values[2]);
+
+                transform.rotation = Quaternion.Euler(pitch, yaw, roll);
+                Debug.Log("Transformation Applied");
+                // Now you can use yaw, pitch, and roll values in Unity
+                // For example, you can assign them to object rotations
+                // or use them in your game logic.
+
+
+            }
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        
+        if (serialPort != null && serialPort.IsOpen)
+        {
+            serialPort.Close();
+        }
+    }
+}
