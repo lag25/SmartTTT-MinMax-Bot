@@ -27,11 +27,28 @@ python tic_tac_toe_gui.py
 
 ## Code Explanation
 
-The project's code is structured to provide a clear understanding of the game logic and the integration of the Min-Max algorithm. Each aspect of the game has been meticulously organized to ensure readability and maintainability. Thi
+The project's code is structured to provide a clear understanding of the game logic and the integration of the Min-Max algorithm. Each aspect of the game has been meticulously organized to ensure readability and maintainability. 
 
 ## Future Enhancements
 
 I plan to further enhance this project by incorporating additional AI strategies, refining the user interface, and expanding the overall user experience. 
+
+### Project Showcase
+
+Here you can find images and videos showcasing the project in action.
+
+1. [Empty 3x3 game grid]
+
+
+![image](https://github.com/lag25/SmartTTT-MinMax-Bot/assets/116341862/8bd2d927-cbcd-421d-88eb-6ddc7df0aff5)
+
+2. Pop-up message after the user loses
+
+
+![image_](https://github.com/lag25/SmartTTT-MinMax-Bot/assets/116341862/10420543-b1c3-444e-b609-ef6ef0248279)
+
+   
+
 
 
 
